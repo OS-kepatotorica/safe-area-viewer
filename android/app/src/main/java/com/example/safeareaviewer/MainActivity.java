@@ -33,7 +33,7 @@ public class MainActivity extends BridgeActivity {
 
                 injectSafeAreaCSS(top, right, bottom, left);
 
-            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            } else {
                 injectSafeAreaCSS(0, 0, 0, 0);
             }
 
@@ -71,12 +71,8 @@ public class MainActivity extends BridgeActivity {
                                 "    document.head.appendChild(style); " +
                                 "  } " +
                                 "  style.textContent = '%s'; " +
-                                "  console.log('Safe area insets injected (edge-to-edge: %s): top=%d, right=%d, bottom=%d, left=%d'); "
-                                +
-                                "  window.dispatchEvent(new CustomEvent('safeAreaChanged')); " +
                                 "} catch(e) { console.error('Error injecting safe area CSS:', e); }",
-                        css.replace("'", "\\'"), "enabled",
-                        (int) topPx, (int) rightPx, (int) bottomPx, (int) leftPx);
+                        css.replace("'", "\\'"));
 
                 bridge.getWebView().evaluateJavascript(script, null);
             }
