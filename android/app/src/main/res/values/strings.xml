@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SafeAreaViewer</string>
+    <string name="title_activity_main">SafeAreaViewer</string>
+    <string name="package_name">com.example.safeareaviewer</string>
+    <string name="custom_url_scheme">com.example.safeareaviewer</string>
+</resources>
